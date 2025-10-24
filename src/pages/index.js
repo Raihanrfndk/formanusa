@@ -13,7 +13,7 @@ import React from 'react'
 
 const homepage = () => {
   return (
-    <div>
+    <div className='bg-white'>
       <Cutscene/>
       <Navbar/>
       <HeroSection/>
