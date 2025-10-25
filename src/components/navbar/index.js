@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "Services", href: "/services" },
+    { name: "Services", href: "/ourservice" },
     { name: "Gallery", href: "/gallery" },
   ];
 
