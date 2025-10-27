@@ -1,5 +1,6 @@
 import { Instagram } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const ServiceContact = () => {
@@ -11,7 +12,10 @@ const ServiceContact = () => {
         150130 / 0822 1000 9900 | Solusi Arsitektur Rumah Tradisional Modern
       </p>
       <div className="grid grid-cols-3 gap-20">
-        <div className="flex flex-col items-center">
+        <Link
+          href="https://www.instagram.com/formanusantara/"
+          className="flex flex-col items-center"
+        >
           <Image
             className="hover:bg-black/50 p-2 transition-all rounded-lg"
             alt="ig"
@@ -20,8 +24,11 @@ const ServiceContact = () => {
             height={60}
           />
           <p className="font-bold">Instagram</p>
-        </div>
-        <div className="flex flex-col items-center">
+        </Link>
+        <Link
+          href="https://wa.me/6281294195658"
+          className="flex flex-col items-center"
+        >
           <Image
             className="hover:bg-black/50 p-2 transition-all rounded-lg"
             alt="wa"
@@ -30,8 +37,11 @@ const ServiceContact = () => {
             height={60}
           />
           <p className="font-bold">WhatsApp</p>
-        </div>
-        <div className="flex flex-col items-center">
+        </Link>
+        <Link
+          href="mailto:formanusantara@gmail"
+          className="flex flex-col items-center"
+        >
           <Image
             className="hover:bg-black/50 p-2 transition-all rounded-lg"
             alt="email"
@@ -40,7 +50,7 @@ const ServiceContact = () => {
             height={60}
           />
           <p className="font-bold">Email</p>
-        </div>
+        </Link>
       </div>
     </div>
   );

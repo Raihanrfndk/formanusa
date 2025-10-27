@@ -12,7 +12,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col gap-5 items-center">
         <h1 className="text-3xl font-bold">Call</h1>
-        <h2 className="text-center underline">+62 853-3083-3812</h2>
+        <h2 className="text-center underline">+62 812-9419-5658</h2>
       </div>
       <div className="flex flex-col gap-5 items-center">
         <h1 className="text-3xl font-bold">Write Us</h1>
