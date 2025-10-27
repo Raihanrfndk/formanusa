@@ -86,10 +86,13 @@ const HeroSection = () => {
         style={{ backgroundImage: "url('/bottom-banner.png')" }}
       >
         <div className="flex justify-center">
-          <div className="bg-[#8b684a] text-white px-6 py-4 rounded-md flex items-center gap-3 shadow-md">
+          <Link
+            href="https://wa.me/6281294195658"
+            className="bg-[#8b684a] hover:bg-[#674d37] text-white px-6 py-4 rounded-md flex items-center gap-3 shadow-md"
+          >
             <Phone size={20} />
             <span className="font-semibold text-sm">+62 812 9419 5658</span>
-          </div>
+          </Link>
         </div>
       </div>
     </>
