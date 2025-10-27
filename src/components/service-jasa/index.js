@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const ServiceJasa = () => {
@@ -18,9 +19,11 @@ const ServiceJasa = () => {
             dan manajemen proyek transparan — mulai dari perencanaan konsep
             hingga realisasi rumah yang mencerminkan jati diri Indonesia.
           </p>
-          <button className="w-1/4 bg-[#a47d53] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#8c6c48] transition">
-            Book Now
-          </button>
+          <Link href="/form">
+            <button className="w-1/4 bg-[#a47d53] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#8c6c48] transition">
+              Book Now
+            </button>
+          </Link>
         </div>
       </div>
 
@@ -102,9 +105,11 @@ const ServiceJasa = () => {
             kemewahan resor bintang lima dengan suasana homey dan eksotis. Ideal
             untuk tujuan sewa harian (short-term rental).
           </p>
-          <button className="w-1/4 bg-[#a47d53] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#8c6c48] transition">
-            Book Now
-          </button>
+          <Link href="/form">
+            <button className="w-1/4 bg-[#a47d53] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#8c6c48] transition">
+              Book Now
+            </button>
+          </Link>
         </div>
       </div>
     </>

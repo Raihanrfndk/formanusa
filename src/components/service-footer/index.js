@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const ServiceFooter = () => {
@@ -13,9 +14,11 @@ const ServiceFooter = () => {
         Konsultasi gratis dengan arsitek berpengalaman. Tanpa komitmen, tanpa
         biaya tersembunyi.
       </h3>
-      <button className="w-1/4 bg-[#a47d53] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#8c6c48] transition">
-        Mulai Konsultasi
-      </button>
+      <Link href="/form">
+        <button className="bg-[#a47d53] text-white px-8 py-3 rounded-full font-semibold shadow-md hover:bg-[#8c6c48] transition">
+          Mulai Konsultasi
+        </button>
+      </Link>
     </div>
   );
 };

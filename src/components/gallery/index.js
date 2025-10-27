@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function GallerySection() {
   return (
     <section className="w-full bg-white px-6 md:px-20 pb-20">
       {/* Section Title */}
-      <h1 className='text-5xl font-bold flex justify-center pb-10'>Gallery</h1>
+      <h1 className="text-5xl font-bold flex justify-center pb-10">Gallery</h1>
 
       {/* Gallery Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
@@ -70,11 +71,11 @@ export default function GallerySection() {
           </div>
         </div>
       </div>
-      <div className="pt-5 flex justify-center">
+      <Link href="/gallery" className="pt-5 flex justify-center">
         <button className="bg-[#8b684a] text-white font-semibold px-8 py-3 rounded-full hover:bg-[#7a5b3f] transition w-60">
-            See More
-          </button>
-      </div>
+          See More
+        </button>
+      </Link>
     </section>
   );
 }
