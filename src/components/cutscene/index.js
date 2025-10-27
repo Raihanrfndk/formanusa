@@ -4,11 +4,23 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Cutscene() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShow(false), 2500); // tampil 2.5 detik
-    return () => clearTimeout(timer);
+    const hasShown = sessionStorage.getItem("cutsceneShown");
+
+    if (!hasShown) {
+      // Make state update async → prevents cascading render warning ✅
+      const start = setTimeout(() => {
+        setShow(true);
+        sessionStorage.setItem("cutsceneShown", "true");
+
+        const end = setTimeout(() => setShow(false), 2500);
+        return () => clearTimeout(end);
+      }, 0);
+
+      return () => clearTimeout(start);
+    }
   }, []);
 
   return (
@@ -20,9 +32,7 @@ export default function Cutscene() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0, transition: { duration: 0.8 } }}
         >
-          {/* Wrapper fullscreen */}
           <div className="relative w-full h-screen flex items-center justify-center">
-            {/* Gambar fullscreen */}
             <Image
               src="/cutscenes.png"
               alt="Cutscene Logo"
@@ -30,8 +40,6 @@ export default function Cutscene() {
               className="object-cover opacity-50"
               priority
             />
-
-            {/* Overlay teks di tengah gambar */}
             <h1 className="absolute inset-0 flex items-center justify-center text-white text-2xl font-semibold text-center px-4">
               SOLUSI DESAIN RUMAH & INTERIOR BERNUANSA NUSANTARA
             </h1>
