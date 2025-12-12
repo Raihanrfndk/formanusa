@@ -14,6 +14,23 @@ export default function PortfolioList() {
   return (
     <div>
       <Navbar />
+      <section
+        className="relative w-full h-85 flex flex-col justify-between"
+        style={{
+          backgroundImage: "url('/banner.png')", // place your background image in public/
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        {/* Overlay for darker contrast */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Text content */}
+        <div className="relative z-10 flex flex-col items-start justify-center h-[75%] px-20 text-white">
+          <h1 className="text-6xl font-bold mb-4">Portfolio</h1>
+        </div>
+      </section>
+
       <section className="bg-white min-h-screen text-black p-6">
         <h1 className="text-4xl font-bold mb-[90px]">Portfolio</h1>
 
