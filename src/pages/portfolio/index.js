@@ -1,17 +1,21 @@
+"use client";
+
 import HeroSection from "@/components/banner";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 const freelancers = [
   {
+    id: 1,
     name: "Farah Queen",
     location: "Bekasi, Pondok Gede",
     experience: "5 Year Experience",
     rating: "100%",
-    image: "/img/port1.png",
+    image: "/port1.png",
     skills: [
       "Architectural Design",
       "2D Design",
@@ -21,6 +25,7 @@ const freelancers = [
     ],
   },
   {
+    id: 2,
     name: "Randy Lestari",
     location: "Depok, Bojongari",
     experience: "2 Year Experience",
@@ -35,6 +40,7 @@ const freelancers = [
     ],
   },
   {
+    id: 3,
     name: "Kiwil Apem",
     location: "Tangerang, Karawaci",
     experience: "4 Year Experience",
@@ -49,6 +55,7 @@ const freelancers = [
     ],
   },
   {
+    id: 4,
     name: "Menuun Sari",
     location: "Jakarta Selatan, Lenteng Agung",
     experience: "5 Year Experience",
@@ -63,6 +70,7 @@ const freelancers = [
     ],
   },
   {
+    id: 5,
     name: "Acumalaka",
     location: "Bogor, Tanah Sareal",
     experience: "6 Year Experience",
@@ -77,6 +85,7 @@ const freelancers = [
     ],
   },
   {
+    id: 6,
     name: "Randy Orton",
     location: "Jakarta Barat, Rawa Belong",
     experience: "5 Year Experience",
@@ -93,6 +102,7 @@ const freelancers = [
 ];
 
 const Portfolio = () => {
+  const router = useRouter();
   return (
     <div>
       <Navbar />
@@ -109,70 +119,33 @@ const Portfolio = () => {
 
         {/* Text content */}
         <div className="relative z-10 flex flex-col items-start justify-center h-[75%] px-20 text-white">
-          <h1 className="text-6xl font-bold mb-4">Forma Nusa</h1>
+          <h1 className="text-6xl font-bold mb-4">Portfolio</h1>
         </div>
       </section>
 
       <section className="bg-white min-h-screen text-black">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-6">
-          {freelancers.map((f, index) => (
+          {freelancers.map((f) => (
             <div
-              key={index}
-              className="border p-6 rounded-md shadow-sm bg-white max-w-sm mx-auto"
+              key={f.id}
+              onClick={() => router.push(`/freelancers/${f.id}`)}
+              className="cursor-pointer border p-6 rounded-md hover:shadow-lg transition"
             >
-              {/* Image */}
               <div className="w-full flex justify-center">
-                <div className="w-40 h-40 overflow-hidden border rounded-md">
-                  <Image
-                    src={f.image}
-                    alt={f.name}
-                    width={160}
-                    height={160}
-                    className="object-cover w-full h-full"
-                  />
+                <div className="w-40 h-40 border rounded-md overflow-hidden">
+                  <Image src={f.image} width={160} height={160} alt={f.name} />
                 </div>
               </div>
 
-              {/* Name */}
               <h1 className="text-2xl font-bold text-center mt-4">{f.name}</h1>
 
-              {/* Location */}
-              <div className="flex justify-center items-center mt-1 gap-1 text-gray-600">
-                <span>📍</span>
-                <p>{f.location}</p>
+              <div className="flex justify-center gap-1 text-gray-600">
+                <span>📍</span> <p>{f.location}</p>
               </div>
 
-              {/* Experience + Rating */}
-              <div className="flex justify-center items-center gap-3 mt-2 text-gray-700">
-                <div className="flex items-center gap-1">
-                  <span>💼</span>
-                  <p>{f.experience}</p>
-                </div>
-
-                <div className="flex items-center gap-1 border px-2 py-1 rounded-md text-sm">
-                  <span>👍</span>
-                  <p>{f.rating}</p>
-                </div>
-              </div>
-
-              {/* Skills */}
-              <div className="flex flex-wrap justify-center gap-2 mt-5">
-                {f.skills.map((skill, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 border rounded-md text-sm hover:bg-gray-100 cursor-pointer"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
-
-              {/* Button */}
-              <div className="flex justify-center mt-6">
-                <button className="px-6 py-2 rounded-full bg-amber-700 text-white hover:bg-amber-800">
-                  Book
-                </button>
-              </div>
+              <button className="block mx-auto mt-5 bg-amber-700 text-white px-6 py-2 rounded-full">
+                Book
+              </button>
             </div>
           ))}
         </div>
